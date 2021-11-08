@@ -2,6 +2,7 @@
 
 namespace ClickForce\Models;
 
+use ClickForce\Factories\UserFactory;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -75,5 +76,10 @@ class User extends Authenticatable
                             'contract.updated_at as updated_at',
                     ])
                     ->join('users', 'users.id', '=', 'contract.uid');
+    }
+
+    protected static function newFactory()
+    {
+        return UserFactory::new();
     }
 }

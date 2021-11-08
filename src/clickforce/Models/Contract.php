@@ -5,6 +5,7 @@ namespace ClickForce\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Services\ApprovableSubjectInterface;
+use ClickForce\Factories\ContractFactory;
 
 class Contract extends Model implements ApprovableSubjectInterface
 {
@@ -34,5 +35,10 @@ class Contract extends Model implements ApprovableSubjectInterface
     public function getDisplayName()
     {
         return $this->contract_id . "-" . $this->theme; 
+    }
+
+    protected static function newFactory()
+    {
+        return ContractFactory::new();
     }
 }

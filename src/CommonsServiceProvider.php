@@ -29,10 +29,6 @@ class CommonsServiceProvider extends ServiceProvider
             __DIR__ . '/../migrations/' => database_path("/migrations/"),
         ], 'migrations');
 
-        $this->publishes([
-            __DIR__ . '/../factories/' => database_path("/factories/"),
-        ], 'factories');
-
         // Lang
         // $this->loadTranslationsFrom(__DIR__ . '/gds/resources/lang', 'gds-commons');
 
