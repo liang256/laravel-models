@@ -18,7 +18,8 @@
     "autoload": {
         "psr-4": {
             "ClickForce\\Commons\\": "src/",
-            "ClickForce\\Models\\": "src/clickforce/Models/"
+            "ClickForce\\Models\\": "src/clickforce/Models/",
+            "ClickForce\\Factories\\": "src/clickforce/Factories/"
         }
     },
     "autoload-dev": {
