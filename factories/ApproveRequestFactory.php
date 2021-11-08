@@ -1,6 +1,6 @@
 <?php
 
-namespace ClickForce\Factories;
+namespace Database\Factories;
 
 use ClickForce\Models\ApproveRequest;
 use ClickForce\Models\User;

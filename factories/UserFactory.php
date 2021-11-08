@@ -1,6 +1,6 @@
 <?php
 
-namespace ClickForce\Factories;
+namespace Database\Factories;
 
 use ClickForce\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
