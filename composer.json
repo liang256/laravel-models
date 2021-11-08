@@ -1,0 +1,64 @@
+{
+    "name": "clickforce/commons",
+    "type": "library",
+    "description": "Commons for ClickForce",
+    "require": {
+        "php": "^7.2",
+        "spatie/laravel-activitylog": "^3.17",
+        "guzzlehttp/guzzle": "^6.5|^7.0.1"
+    },
+    "require-dev": {
+        "fzaninotto/faker": "^1.4",
+        "mockery/mockery": "^1.0",
+        "laravel/lumen-framework": "^6.0|^7.0",
+        "webpatser/laravel-uuid": "^3.0",
+        "squizlabs/php_codesniffer": "3.*",
+        "phpunit/phpunit": "^8.0|^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ClickForce\\Models\\": "src/clickforce/Models"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ClickForce\\": "tests/clickforce"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ClickForce\\Commons\\CommonsServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "cf:test": "phpunit",
+        "cf:test-one": "@cf:test --filter",
+        "cf:test-models": "@cf:test --testsuite Models",
+        "cf:test-requests": "@cf:test --testsuite Requests",
+        "cf:test-resources": "@cf:test --testsuite Resources",
+        "cf:test-suppliers": "@cf:test --testsuite Suppliers",
+        "cf:test-tools": "@cf:test --testsuite Tools",
+        "cf:lint": "phpcs",
+        "cf:todo": "phpcs --standard=phpcs-todo.xml",
+        "cf:autofix": "phpcbf",
+        "cf:sniffs": "phpcs -e"
+    },
+    "scripts-descriptions": {
+        "cf:test": "完整測試",
+        "cf:test-one": "測試單一項目，需要加上一個參數作為 class name 的篩選條件",
+        "cf:test-models": "測試所有 Model",
+        "cf:test-requests": "測試所有 Requests",
+        "cf:test-resources": "測試所有 Resources",
+        "cf:test-suppliers": "測試所有供應商 API",
+        "cf:test-tools": "測試所有工具程式",
+        "cf:lint": "檢查語法",
+        "cf:todo": "檢查語法，而且顯示 TODO 項目",
+        "cf:autofix": "處理可自動修正的語法問題",
+        "cf:sniffs": "顯示 Coding Style 規範引用的規則檢查程式"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

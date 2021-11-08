@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<ruleset name="GDS">
+
+  <!--
+    需要檢查的程式碼範圍
+  -->
+  <file>src</file>
+  <file>tests</file>
+
+  <!--
+    執行時使用參數
+  -->
+  <arg name="colors"/>
+
+  <!--
+    GDS Coding Style 標準
+    * 以 PSR12 為基礎
+    * 要求 function 與 class 註解說明用法
+    * 偵測 TODO 和 FIXME
+  -->
+  <rule ref="PSR12"/>
+
+  <!-- 註解檢查規則 -->
+  <rule ref="Generic.Commenting.Fixme"/>
+
+  <!--
+    可用的註解檢查規則:
+
+    <rule ref="Squiz.Commenting.BlockComment"/>
+    <rule ref="Squiz.Commenting.ClassComment"/>
+    <rule ref="Squiz.Commenting.ClosingDeclarationComment"/>
+    <rule ref="Squiz.Commenting.DocCommentAlignment"/>
+    <rule ref="Squiz.Commenting.EmptyCatchComment"/>
+    <rule ref="Squiz.Commenting.FileComment"/>
+    <rule ref="Squiz.Commenting.FunctionComment"/>
+    <rule ref="Squiz.Commenting.FunctionCommentThrowTag"/>
+    <rule ref="Squiz.Commenting.InlineComment"/>
+    <rule ref="Squiz.Commenting.LongConditionClosingComment"/>
+    <rule ref="Squiz.Commenting.PostStatementComment"/>
+    <rule ref="Squiz.Commenting.VariableComment"/>
+
+    <rule ref="PEAR.Commenting.ClassComment"/>
+    <rule ref="PEAR.Commenting.FileComment"/>
+    <rule ref="PEAR.Commenting.FunctionComment"/>
+    <rule ref="PEAR.Commenting.InlineComment"/>
+
+    <rule ref="Generic.Commenting.Todo"/>
+  -->
+
+</ruleset>
