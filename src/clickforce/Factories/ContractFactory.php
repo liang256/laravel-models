@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Factories;
+namespace ClickForce\Factories;
 
 use ClickForce\Models\Contract;
 use ClickForce\Models\User;
