@@ -4,10 +4,11 @@ namespace ClickForce\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use ClickForce\Factories\ApproveRequestFactory;
 
 class ApproveRequest extends Model
 {
-    use HasFactory;
+    // use HasFactory;
 
     // protected $primaryKey = 'uuid';
     // public $incrementing = false;
@@ -58,5 +59,14 @@ class ApproveRequest extends Model
     public function approver()
     {
         return $this->belongsTo(User::class, 'approver_id');
+    }
+
+    public function factory()
+    {
+        $factory = ApproveRequestFactory::new();
+
+        return $factory
+                    ->count(is_numeric($parameters[0] ?? null) ? $parameters[0] : null)
+                    ->state(is_array($parameters[0] ?? null) ? $parameters[0] : ($parameters[1] ?? []));
     }
 }
