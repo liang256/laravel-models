@@ -8,7 +8,7 @@ use ClickForce\Factories\ApproveRequestFactory;
 
 class ApproveRequest extends Model
 {
-    // use HasFactory;
+    use HasFactory;
 
     // protected $primaryKey = 'uuid';
     // public $incrementing = false;
@@ -61,12 +61,8 @@ class ApproveRequest extends Model
         return $this->belongsTo(User::class, 'approver_id');
     }
 
-    public function factory()
+    protected static function newFactory()
     {
-        $factory = ApproveRequestFactory::new();
-
-        return $factory
-                    ->count(is_numeric($parameters[0] ?? null) ? $parameters[0] : null)
-                    ->state(is_array($parameters[0] ?? null) ? $parameters[0] : ($parameters[1] ?? []));
+        return ApproveRequestFactory::new();
     }
 }
